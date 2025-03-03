@@ -27,15 +27,6 @@ export default function MobileFooterSection() {
         <div className={styles.dividerContainer}>
           <div className={styles.linkGroup}>
             <div className={styles.linkRow}>
-              <a href={footerLinks.navLinks[2]}>Home</a>
-              <a href={footerLinks.navLinks[2]}>Dashboard</a>
-              <a href={footerLinks.navLinks[3]}>Blog</a>
-            </div>
-            <div className={styles.linkRow}>
-              <a href={footerLinks.navLinks[4]}>About Us</a>
-              <a href={footerLinks.navLinks[5]}>Contact Us</a>
-            </div>
-            <div className={styles.linkRow}>
               <a href={footerLinks.legalLinks[2]}>Terms &amp; Conditions</a>
               <a href={footerLinks.legalLinks[3]}>Privacy Policy</a>
             </div>
