@@ -4,7 +4,7 @@ export const journeySection = [
     icon: "/images/icons/pencil.svg",
     title: "Create Resume",
     revealText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis tempor felis",
+      "Craft a standout, ATS-friendly resume in minutes. Our AI-driven tool ensures your resume is optimized for recruiters and hiring systems, increasing your chances of getting noticed.",
     redirectURL: "",
   },
   {
@@ -12,14 +12,15 @@ export const journeySection = [
     icon: "/images/icons/ats.svg",
     title: "Custom ATS",
     revealText:
-      "Vivamus tempus ligula sem, vitae pellentesque elit euismod vel.",
+      "Get a deep ATS analysis of your resume. Identify missing keywords, improve formatting, and optimize content to ensure your application passes the filters and reaches hiring managers.",
     redirectURL: "",
   },
   {
     id: 3,
     icon: "/images/icons/Tie.svg",
     title: "Auto match jobs",
-    revealText: "Fusce non pulvinar lectus, placerat pretium velit.",
+    revealText:
+      "Find jobs that truly match your skills and experience. Our AI auto-matches you with the best opportunities, saving time and helping you apply where you have the highest chances of success.",
     redirectURL: "",
   },
 ];

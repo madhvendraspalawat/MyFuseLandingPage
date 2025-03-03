@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { journeySection } from "../../constants/journeySection";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import styles from "./CustomerJourney.module.css";
-
+import { buttonData } from "../../constants/buttons";
+import MyFuseButton from "../MyFuseButton/MyFuseButton";
 // Motion variants for content (front) and overlay (back)
 const contentVariants = {
   initial: { opacity: 1 },
@@ -63,7 +64,7 @@ export default function CustomerJourney() {
                 {item.revealText || "Learn More"}
               </p>
               <button className={styles.backButton}>
-                <FaArrowRight />
+                <FaArrowRight className={styles.iconStyle} />
               </button>
             </motion.div>
           </div>
@@ -88,12 +89,13 @@ export default function CustomerJourney() {
       </div>
 
       {/* Start Now Button */}
-      <button
+
+      <MyFuseButton
+        title={buttonData.CustomerJourney[0].title}
+        onClick={buttonData.CustomerJourney[0].onClick}
+        variant={buttonData.CustomerJourney[0].variant}
         className={styles.startButton}
-        style={{ border: "none", paddingTop: "16px", paddingBottom: "16px" }}
-      >
-        Start Now
-      </button>
+      />
     </div>
   );
 }

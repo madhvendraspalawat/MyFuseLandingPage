@@ -44,5 +44,13 @@ export const buttonData = {
       className: "",
     },
   ],
+  CustomerJourney: [
+    {
+      title: "START NOW",
+      variant: "filled",
+      onClick: () => {},
+      className: "",
+    },
+  ],
   // ...
 };
