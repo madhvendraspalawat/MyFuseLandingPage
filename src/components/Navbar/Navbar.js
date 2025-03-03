@@ -40,6 +40,12 @@ export default function ResponsiveNavbar() {
                 <Menu className={styles.icon} />
               </button>
               <div className={styles.brand}>
+                <img
+                  src="/images/icons/MyFuseMascot.png"
+                  width={36}
+                  height={36}
+                  style={{ display: "flex", objectPosition: "end" }}
+                />
                 MyFuse<span className={styles.brandHighlight}>.</span>In
               </div>
               {/* Spacer to center the brand */}
@@ -125,13 +131,18 @@ export default function ResponsiveNavbar() {
       </div>
     );
   } else {
-    // DESKTOP NAVBAR (for larger layouts)
+    // KTOP NAVBAR (for larger layouts)
     return (
       <main className={styles.desktopMain}>
         <nav className={styles.desktopNav}>
           <div className={styles.desktopContainer}>
             <div className={styles.desktopLinksWrapper}>
               <a href="#" className={styles.desktopBrand}>
+                <img
+                  src="/images/icons/MyFuseMascot.png"
+                  width={36}
+                  height={36}
+                />
                 MyFuse<span className={styles.brandHighlight}>.</span>In
               </a>
               <a href="#" className={styles.desktopNavLink}>

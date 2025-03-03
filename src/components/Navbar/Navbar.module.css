@@ -50,6 +50,9 @@
   font-size: 1.25rem; /* text-xl */
   font-weight: bold;
   font-family: "Space Grotesk", sans-serif;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .purpleBar {
@@ -161,14 +164,10 @@
   font-weight: bold;
   font-family: "Space Grotesk" !important;
   text-decoration: none;
-}
-
-.desktopBrand {
-  color: #000;
-  font-size: 1.25rem; /* text-xl */
-  font-weight: bold;
-  font-family: "Space Grotesk" !important;
-  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .brandHighlight {
   color: var(--my-fuse-yellow) !important; /* text-gray-600 */

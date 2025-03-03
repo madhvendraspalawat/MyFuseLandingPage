@@ -13,9 +13,7 @@ export default function MobileFooterSection() {
             MyFuse<span className={styles.brandHighlight}>.</span>In
           </div>
           {/* Subheading */}
-          <div className={styles.subheading}>
-            What is MyFuse and why is it the best resume builder?
-          </div>
+          <div className={styles.subheading}>Stand Out, Get Hired Faster</div>
           {/* Subscription */}
           <div className={styles.subscription}>
             <input

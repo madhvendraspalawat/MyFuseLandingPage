@@ -62,7 +62,7 @@
   padding-right: 0.25rem;
   padding-top: 0.5rem; /* py-2 */
   padding-bottom: 0.5rem;
-  width: 83.3333%; /* w-5/6 */
+  width: 120%; /* w-5/6 */
 }
 
 /* Subscription input */
@@ -93,6 +93,7 @@
   margin-right: 0.5rem; /* mr-2 */
   text-transform: uppercase;
   border: none;
+  cursor: pointer;
 }
 
 .rightColumn {
