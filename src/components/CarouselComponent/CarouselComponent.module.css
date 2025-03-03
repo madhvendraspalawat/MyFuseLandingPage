@@ -10,6 +10,11 @@
   width: 100%;
   padding: 96px 0px;
 }
+@media (max-width: 768px) {
+  .outerContainer {
+    padding: 64px 0px;
+  }
+}
 
 /* Heading styles: text-7xl, font-bold, text-center, px-24, pt-16, pb-20, font-plusJakarta, text-black, leading-tight */
 .heading {
@@ -18,10 +23,14 @@
   text-align: center;
   padding: 4rem 6rem 5rem; /* pt-16 (4rem), px-24 (6rem), pb-20 (5rem) */
   color: black;
-  line-height: 1.1;
+  line-height: 105%;
   font-family: "Plus Jakarta Sans", sans-serif;
   width: 100%;
   font-size: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .headingHighlight {
   color: #4d4dff;
@@ -30,9 +39,15 @@
 @media (max-width: 768px) {
   .heading {
     font-size: 32px;
+    width: 100%;
+    text-align: center;
+    padding: 64px 16px;
   }
   .headingHighlight {
     font-size: 32px;
+    width: 100%;
+    text-align: center;
+    padding: 0px 0px;
   }
 }
 
