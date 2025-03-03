@@ -118,6 +118,10 @@ export default function FindJobs() {
             animate={controls}
             drag="x"
             dragConstraints={{ left: -slideWidth * maxIndex, right: 0 }}
+            dragDirectionLock={true}
+            dragPropagation={true}
+            dragElastic={0.2}
+            dragMomentum={false}
             onDragEnd={(event, info) => {
               if (info.offset.x < -50) {
                 handleSwipe("left");

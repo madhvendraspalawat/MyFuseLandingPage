@@ -155,7 +155,7 @@ export default function CommentSection() {
                 // Change text color when selected.
                 color:
                   activeCategory === category
-                    ? "var(--my-fuse-blue, #fdc460)"
+                    ? "var(--my-fuse-blue, #4d4dff)"
                     : "#000000",
                 backgroundColor:
                   activeCategory === category ? "#fff" : "transparent",

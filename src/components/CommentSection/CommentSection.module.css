@@ -313,7 +313,7 @@
 
 /* Fallback active/inactive styles for category buttons */
 .activeCategoryButton {
-  color: var(--my-fuse-yellow, #fdc460);
+  color: var(--my-fuse-blue, #4d4dff);
 }
 
 .inactiveCategoryButton {

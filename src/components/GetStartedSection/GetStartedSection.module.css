@@ -10,7 +10,7 @@
 }
 @media (max-width: 640px) {
   .getStartedContainer {
-    padding: 4rem 1.5rem;
+    padding: 32px 16px;
     background-color: var(--myFuseYellow, #fdc460);
   }
 }
