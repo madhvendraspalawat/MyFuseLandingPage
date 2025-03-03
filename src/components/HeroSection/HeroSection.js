@@ -32,6 +32,7 @@ const HeroSection = () => {
                   width="89"
                   height="89"
                   className={styles.mobileGifImage}
+                  style={{ transform: "scaleX(-1)" }}
                 />
               </div>
             </div>
