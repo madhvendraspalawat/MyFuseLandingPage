@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { motion, PanInfo } from "framer-motion";
+import { motion } from "framer-motion";
 import { imageLinks } from "../../constants/featureImages";
 import styles from "./StorySection.module.css";
 
@@ -25,35 +25,56 @@ function StorySection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Normal carousel: use the original images array (no cloning)
+  // Carousel images array
   const images = activeImages;
 
-  // Track the current slide index (0-based)
+  // Current slide index
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Define slide width as 80% (for reference, not directly used)
-  const slideWidth = 80; // percent
+  // Define separate slide widths and gaps for mobile and desktop
+  const mobileSlidePx = 400;
+  const desktopSlidePx = 800;
+  const mobileGap = 24;
+  const desktopGap = 24;
 
-  // Reference to the carousel container (to measure its width)
+  // Choose slidePx and gap based on isMobile flag
+  const slidePx = isMobile ? mobileSlidePx : desktopSlidePx;
+  const gap = isMobile ? mobileGap : desktopGap;
+
+  // Reference to carousel container and measure its width
   const carouselRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
+
   useEffect(() => {
-    if (carouselRef.current) {
-      setContainerWidth(carouselRef.current.clientWidth);
+    function updateContainerWidth() {
+      if (carouselRef.current) {
+        setContainerWidth(carouselRef.current.offsetWidth);
+      }
     }
-  }, [carouselRef.current, isMobile, activeImages]);
+    updateContainerWidth();
+    window.addEventListener("resize", updateContainerWidth);
+    return () => window.removeEventListener("resize", updateContainerWidth);
+  }, []);
 
-  // Fixed gap between slides (24px)
-  const gap = 24; // px
+  // Effective width accounts for the horizontal padding (16px on each side => 32px total)
+  const effectiveWidth = containerWidth - 32;
 
-  // Compute each slide's width in pixels.
-  const slidePx = isMobile ? 400 : 800;
+  // Calculate separate offsets for mobile and desktop.
+  const mobileOffset =
+    effectiveWidth > 0
+      ? (effectiveWidth - mobileSlidePx) / 2 -
+        currentIndex * (mobileSlidePx + mobileGap)
+      : 0;
+  const desktopOffset =
+    effectiveWidth > 0
+      ? (effectiveWidth - desktopSlidePx) * 0.434 -
+        currentIndex * (desktopSlidePx + desktopGap)
+      : 0;
 
-  // Compute the offset (we use inline animation instead)
-  const computedOffset =
-    currentIndex !== 7 ? -currentIndex * (slidePx + gap) : -currentIndex * gap;
+  // Use the appropriate offset based on screen size.
+  const computedOffset = isMobile ? mobileOffset : desktopOffset;
 
-  // Arrow handlers (clamped to first and last slide)
+  // Arrow handlers
   const handleNext = () => {
     setCurrentIndex((prev) => Math.min(prev + 1, images.length - 1));
   };
@@ -61,7 +82,7 @@ function StorySection() {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
-  // Drag handler for mobile: if the user drags more than half a slide, update the index.
+  // Drag handler for mobile: update index if dragged more than half a slide
   const handleDragEnd = (event, info) => {
     if (!carouselRef.current) return;
     if (info.offset.x < -slidePx / 2) {
@@ -71,9 +92,8 @@ function StorySection() {
     }
   };
 
-  // -------------------------------
   // Dot pagination logic (mobile only)
-  const windowSize = 5;
+  const windowSize = 7;
   const totalDots = images.length;
   let startDot = 0;
   if (totalDots > windowSize) {
@@ -83,7 +103,6 @@ function StorySection() {
   }
   const visibleDots = images.slice(startDot, startDot + windowSize);
   const activeDotInWindow = currentIndex - startDot;
-  // -------------------------------
 
   return (
     <div
@@ -105,15 +124,11 @@ function StorySection() {
         <div className={styles.carouselContainer} ref={carouselRef}>
           <motion.div
             className={styles.carouselInner}
-            animate={{
-              x:
-                currentIndex !== 7
-                  ? -currentIndex * (slidePx + gap)
-                  : -currentIndex * gap,
-            }}
+            animate={{ x: computedOffset }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
             drag={isMobile ? "x" : false}
             onDragEnd={isMobile ? handleDragEnd : undefined}
+            style={{ display: "flex", gap: `${gap}px` }}
           >
             {images.map((link, index) => (
               <div key={index} className={styles.slideWrapper}>
@@ -133,7 +148,7 @@ function StorySection() {
           </motion.div>
         </div>
 
-        {/* Arrow Buttons (visible only on desktop) */}
+        {/* Arrow Buttons (desktop only) */}
         {!isMobile && (
           <div className={styles.arrowButtonsContainer}>
             <button
@@ -166,7 +181,7 @@ function StorySection() {
           </div>
         )}
 
-        {/* Pagination Dots (visible only on mobile) */}
+        {/* Dot Pagination (mobile only) */}
         {isMobile && (
           <div className={styles.paginationDots}>
             {visibleDots.map((_, i) => (

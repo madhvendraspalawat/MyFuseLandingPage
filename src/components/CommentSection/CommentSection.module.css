@@ -57,6 +57,7 @@
   font-weight: bold;
   color: #4d4dff; /* text-[#4D4DFF] */
   text-align: center;
+  line-height: 105%;
 }
 @media (min-width: 1024px) {
   .heading {
@@ -111,12 +112,13 @@
 
 /* Category Button Base */
 .categoryButton {
-  font-size: 10px; /* text-[10px] */
-  padding: 0.25rem 0.75rem; /* py-1, px-3 */
+  font-size: 16px !important; /* text-[10px] */
+  padding: 16px 32px !important; /* py-1, px-3 */
   border-radius: 9999px; /* rounded-full */
   transition: all 0.3s;
   font-family: "Figtree";
   font-weight: 500;
+  width: 20%;
 }
 @media (min-width: 768px) {
   .categoryButton {

@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from "react";
 import Lottie from "lottie-react";
 import animationData from "../../assets/animations/MyFuse Animation Sparky.json";
 import styles from "./AnimationSection.module.css";
-
+import { buttonData } from "../../constants/buttons";
 const sections = [
   {
     title: "Check Resume Score",
@@ -109,8 +109,11 @@ const AnimationSection = () => {
                     <h2 className={styles.title}>{item.title}</h2>
                     <p className={styles.description}>{item.text}</p>
                   </div>
-                  <button className={styles.sectionButton}>
-                    {item.buttonText}
+                  <button
+                    className={styles.sectionButton}
+                    onClick={buttonData.animationSection[index].onClick}
+                  >
+                    {buttonData.animationSection[index].title}
                   </button>
                 </div>
               ))}

@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 10;
 }
 
 /* Each slide wrapper: absolute, flex-col */
@@ -165,15 +165,19 @@
   background-color: #4d4dff;
   color: white;
   border-radius: 9999px;
-  padding: 0.75rem; /* p-3 */
+  padding: 16px; /* p-3 */
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: row;
 }
 .controlButton:hover {
   background-color: #3b3bff;
 }
 .controlIcon {
-  width: 1.25rem; /* w-5 */
-  height: 1.25rem; /* h-5 */
+  width: 24px; /* w-5 */
+  height: 24px; /* h-5 */
 }

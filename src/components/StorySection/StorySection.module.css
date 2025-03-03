@@ -6,9 +6,19 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 4rem 0; /* Equivalent to py-16 */
+  padding: 4rem 0; /* Desktop: large vertical padding */
+}
+
+@media (max-width: 640px) {
+  .container {
+    background-position: top;
+    background-size: contain; /* Fill the screen on mobile */
+    background-repeat: no-repeat;
+    padding: 2rem 0; /* Reduce vertical padding on mobile */
+  }
 }
 
 /* Heading wrapper */
@@ -18,11 +28,12 @@
   justify-content: center;
   align-items: center;
   gap: 3rem; /* gap-12 = 3rem */
-  margin-top: 175px;
+  margin-top: 175px; /* Desktop: large top margin */
 }
+
 @media (max-width: 640px) {
   .headingWrapper {
-    margin-top: 2rem; /* max-sm:mt-8 */
+    margin-top: 64px; /* Smaller top margin on mobile */
   }
 }
 
@@ -34,14 +45,26 @@
   text-align: center;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: bold;
-  font-size: 2.25rem; /* text-4xl */
+  font-size: 2.25rem; /* Desktop (text-4xl) */
   width: 80%;
   color: #0f0f0f;
+  line-height: 105%;
 }
+
+/* For screens >= 768px, the heading text is even larger */
 @media (min-width: 768px) {
   .headingText {
     font-size: 4.5rem; /* md:text-7xl */
     width: 50%;
+  }
+}
+
+/* For screens < 640px, slightly reduce heading text size */
+@media (max-width: 640px) {
+  .headingText {
+    font-size: 36px;
+    width: 90%;
+    padding-top: 1rem;
   }
 }
 
@@ -55,7 +78,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 0 1rem; /* px-4 */
+  padding: 0 16px; /* px-4 for horizontal padding */
 }
 
 /* Carousel inner container */
@@ -102,6 +125,11 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+}
+
+.arrowButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Rotate image 180 degrees */

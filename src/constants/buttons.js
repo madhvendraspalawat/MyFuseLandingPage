@@ -10,5 +10,31 @@ export const buttonData = {
       className: "",
     },
   ],
+  animationSection: [
+    {
+      title: "CHECK NOW",
+      variant: "filled",
+      onClick: () => {},
+      className: "",
+    },
+    {
+      title: "CREATE NOW",
+      variant: "filled",
+      onClick: () => {},
+      className: "",
+    },
+    {
+      title: "CUSTOMIZE NOW",
+      variant: "filled",
+      onClick: () => {},
+      className: "",
+    },
+    {
+      title: "FIND JOBS",
+      variant: "filled",
+      onClick: () => {},
+      className: "",
+    },
+  ],
   // ...
 };

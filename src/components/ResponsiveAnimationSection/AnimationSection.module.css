@@ -88,6 +88,7 @@
   font-size: 4.5rem; /* text-7xl approx */
   color: #000; /* myFuseBlack */
   text-transform: capitalize;
+  line-height: 105%;
 }
 
 /* Description paragraph styling */

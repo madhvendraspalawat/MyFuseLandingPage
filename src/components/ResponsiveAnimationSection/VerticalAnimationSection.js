@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "../../assets/animations/MyFuse Animation Sparky.json";
 import styles from "./VerticalAnimationSection.module.css";
-
+import { buttonData } from "../../constants/buttons";
 const sections = [
   {
     title: "Check Resume Score",
