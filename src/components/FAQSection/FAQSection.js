@@ -2,27 +2,38 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./FAQSection.module.css";
-
+import { buttonData } from "../../constants/buttons";
+import MyFuseButton from "../MyFuseButton/MyFuseButton";
 const faqData = [
   {
     question: "What is MyFuse and why is it the best resume builder?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "MyFuse is an AI-powered resume builder designed to help job seekers create optimized, ATS-friendly resumes. It enhances your resume with industry-specific keywords, formatting best practices, and real-time scoring to ensure it gets noticed by recruiters and hiring systems.",
   },
   {
     question: "How do you clone a resume?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "MyFuse allows you to customize your resume for each job application by analyzing job descriptions and suggesting relevant keywords. With AI-driven insights, you can quickly adjust your resume to match specific job requirements, improving your chances of getting shortlisted.",
   },
   {
     question: "What are the AI features offered by MyFuse?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "MyFuse AI provides instant ATS resume scoring, keyword optimization, grammar suggestions, and job-specific tailoring. It helps improve your resume's visibility in applicant tracking systems, increasing your chances of landing interviews.",
   },
   {
     question: "How can my resume get a high ATS score?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "To get a high ATS score, ensure your resume includes relevant keywords, clear formatting, and job-specific skills. MyFuse provides a step-by-step guide to improving your score by analyzing your resume against job descriptions.",
+  },
+  {
+    question: "Does MyFuse help with job applications?",
+    answer:
+      "Yes! MyFuse not only improves your resume but also auto-matches you with relevant job openings. You can apply directly through our platform, ensuring your resume is optimized before submission.",
+  },
+  {
+    question: "Is MyFuse free to use?",
+    answer:
+      "To get a high ATS score, ensure your resume includes relevant keywords, clear formatting, and job-specific skills. MyFuse provides a step-by-step guide to improving your score by analyzing your resume against job descriptions.MyFuse offers both free and premium plans. The free version allows you to create and analyze your resume, while the premium version provides advanced features like AI-driven optimizations, job application tracking, and custom ATS reports.",
   },
 ];
 
@@ -86,12 +97,11 @@ export default function FAQSection() {
         })}
 
         {/* Get in Touch Button - Mobile Only */}
-        <button
-          className={styles.getInTouchMobile}
-          style={{ border: "none", paddingTop: "16px", paddingBottom: "16px" }}
-        >
-          get in touch
-        </button>
+        <MyFuseButton
+          title={buttonData.FAQSection[0].title}
+          onClick={buttonData.FAQSection[0].onClick}
+          variant={buttonData.FAQSection[0].variant}
+        />
       </div>
 
       {/* Left Column: Heading, Subheading */}
@@ -104,9 +114,12 @@ export default function FAQSection() {
           </p>
         </div>
         {/* Get in Touch Button - Default for Desktop */}
-        <button className={styles.getInTouchDesktop} style={{ border: "none" }}>
-          get in touch
-        </button>
+        <MyFuseButton
+          title={buttonData.FAQSection[0].title}
+          onClick={buttonData.FAQSection[0].onClick}
+          variant={buttonData.FAQSection[0].variant}
+          className={styles.getInTouchDesktop}
+        />
       </div>
     </section>
   );

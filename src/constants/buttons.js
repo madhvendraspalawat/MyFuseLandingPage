@@ -36,5 +36,13 @@ export const buttonData = {
       className: "",
     },
   ],
+  FAQSection: [
+    {
+      title: "GET IN TOUCH",
+      variant: "filled",
+      onClick: () => {},
+      className: "",
+    },
+  ],
   // ...
 };
