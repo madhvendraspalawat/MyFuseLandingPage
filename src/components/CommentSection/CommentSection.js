@@ -1,9 +1,52 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaQuoteLeft } from "react-icons/fa";
 import styles from "./CommentSection.module.css";
-import { comments } from "../../constants/testimonials";
+
+const comments = [
+  {
+    id: 1,
+    category: "recent graduate",
+    text: "As a recent graduate with very little experience, job hunting was really tough on me. MyFuse provided opportunities that matched my skills, making it easier to land my first job.",
+    name: "Rajesh Singh",
+    profile: "/images/profile/rajeshpfp.jpg",
+  },
+  {
+    id: 4,
+    category: "recent graduate",
+    text: "As a recent graduate with very little experience, job hunting was really tough on me. MyFuse provided opportunities that matched my skills, making it easier to land my first job.",
+    name: "Rajesh Singh",
+    profile: "/images/profile/rajeshpfp.jpg",
+  },
+  {
+    id: 5,
+    category: "recent graduate",
+    text: "As a recent graduate with very little experience, job hunting was really tough on me. MyFuse provided opportunities that matched my skills, making it easier to land my first job.",
+    name: "Rajesh Singh",
+    profile: "/images/profile/rajeshpfp.jpg",
+  },
+  {
+    id: 2,
+    category: "young professional",
+    text: "As a young professional, I needed career guidance. MyFuse connected me with great opportunities that matched my skills, making my transition smooth.",
+    name: "Rajesh Singh",
+    profile: "/images/profile/rajeshpfp.jpg",
+  },
+  {
+    id: 3,
+    category: "experienced professional",
+    text: "As an experienced professional, I was looking for better opportunities. MyFuse helped me find a position that aligns perfectly with my expertise.",
+    name: "Rajesh Singh",
+    profile: "/images/profile/rajeshpfp.jpg",
+  },
+  {
+    id: 10,
+    category: "recent graduate",
+    text: "As an experienced professional, I was looking for better opportunities. MyFuse helped me find a position that aligns perfectly with my expertise.",
+    name: "Rajesh Singh",
+    profile: "/images/profile/rajeshpfp.jpg",
+  },
+];
 
 export default function CommentSection() {
   const [activeCategory, setActiveCategory] = useState("recent graduate");
@@ -56,81 +99,27 @@ export default function CommentSection() {
   return (
     <section className={styles.commentSection}>
       <div className={styles.backgroundContainer}>
-        <div
-          style={
-            isMobile
-              ? {
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }
-              : {}
-          }
-        >
-          {" "}
-          {/* Heading & Image */}
-          <div
-            className={styles.headingContainer}
-            style={
-              isMobile
-                ? {
-                    display: "flex",
-                    flexDirection: "row-reverse",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    borderBottom: "1px solid #4d4dff",
-                    paddingLeft: "16px",
-                    paddingRight: "16px",
-                  }
-                : {}
-            }
-          >
-            <img
-              src="/images/animations/testimonialSectionClip.svg"
-              alt="Pin"
-              className={styles.headingImage}
-              style={isMobile ? { transform: "translateY(10px)" } : {}}
-            />
-            <div
-              style={{
-                textAlign: "left",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <h2 className={styles.heading} style={{ textAlign: "left" }}>
-                Job Seekers Love <br className="hidden md:block" /> MyFuse
-              </h2>
-            </div>
-          </div>
+        {/* Heading & Image */}
+        <div className={styles.headingContainer}>
+          <img
+            src="/images/animations/testimonialSectionClip.svg"
+            alt="Pin"
+            className={styles.headingImage}
+          />
+          <h2 className={styles.heading}>
+            Job Seekers Love <br className="hidden md:block" /> MyFuse
+          </h2>
         </div>
+        <hr className={styles.divider} />
 
         {/* Category Buttons */}
-        <div
-          className={
-            !isMobile ? styles.categoryButton : styles.mobileCategoryButton
-          }
-          style={
-            isMobile
-              ? {
-                  paddingTop: "16px",
-                  width: "100%",
-                  justifyContent: "space-around",
-                  alignItems: "center",
-                }
-              : {}
-          }
-        >
+        <div className={styles.categoryButtons}>
           {[
             "recent graduate",
             "young professional",
             "experienced professional",
           ].map((category) => (
-            // Use motion.button on mobile to enable shared layout animation.
-            <motion.button
+            <button
               key={category}
               onClick={() => {
                 setActiveCategory(category);
@@ -139,33 +128,15 @@ export default function CommentSection() {
                   scrollContainerRef.current.scrollLeft = 0;
                 }
               }}
-              className={
-                !isMobile ? styles.categoryButton : styles.mobileCategoryButton
-              }
-              style={
-                isMobile
-                  ? {}
-                  : {
-                      border: "2px solid #4d4dff",
-                      paddingLeft: "12px",
-                      paddingRight: "12px",
-                    }
-              }
-              animate={{
-                // Change text color when selected.
-                color:
-                  activeCategory === category
-                    ? "var(--my-fuse-blue, #4d4dff)"
-                    : "#000000",
-                backgroundColor:
-                  activeCategory === category ? "#fff" : "transparent",
-              }}
+              className={`${styles.categoryButton} ${
+                activeCategory === category
+                  ? styles.activeCategoryButton
+                  : styles.inactiveCategoryButton
+              }`}
+              style={{ border: "2px solid #4d4dff" }}
             >
               {category.toUpperCase().replace("_", " ")}
-              {activeCategory === category && (
-                <motion.div className={styles.underline} layoutId="underline" />
-              )}
-            </motion.button>
+            </button>
           ))}
         </div>
 

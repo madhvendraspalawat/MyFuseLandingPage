@@ -115,6 +115,8 @@ export default function FindJobs() {
         <div className={styles.carouselWrapper}>
           <motion.div
             className={styles.carouselTrack}
+            // Add touch-action style so vertical scrolls work:
+            style={{ touchAction: "pan-y" }}
             animate={controls}
             drag="x"
             dragConstraints={{ left: -slideWidth * maxIndex, right: 0 }}
