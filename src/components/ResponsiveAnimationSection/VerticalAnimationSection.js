@@ -6,6 +6,7 @@ import animationData from "../../assets/animations/MyFuse Animation Sparky.json"
 import styles from "./VerticalAnimationSection.module.css";
 import { buttonData } from "../../constants/buttons";
 import { sections } from "../../constants/animationText";
+
 function VerticalAnimationSection() {
   const containerRef = useRef(null);
   const pinnedRef = useRef(null);
@@ -24,7 +25,7 @@ function VerticalAnimationSection() {
     // Measure text content height and calculate scroll distance so that
     // the final element reaches the top half of the viewport.
     const contentHeight = textContentRef.current?.clientHeight || 0;
-    const scrollDistance = contentHeight * 1.31 - window.innerHeight / 2;
+    const scrollDistance = contentHeight - window.innerHeight / 2;
     const totalHeight = scrollDistance + window.innerHeight;
     setScrollHeight(totalHeight);
     if (containerRef.current) {

@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useRef, useEffect } from "react";
 import Lottie from "lottie-react";
 import animationData from "../../assets/animations/MyFuse Animation Sparky.json";
@@ -7,7 +6,7 @@ import styles from "./AnimationSection.module.css";
 import { buttonData } from "../../constants/buttons";
 import { sections } from "../../constants/animationText";
 import MyFuseButton from "../MyFuseButton/MyFuseButton";
-import { button } from "framer-motion/client";
+
 const AnimationSection = () => {
   const containerRef = useRef(null);
   const textContentRef = useRef(null);
@@ -30,6 +29,7 @@ const AnimationSection = () => {
     const scrollDistance = totalHeight - window.innerHeight;
     lottieRef.current?.goToAndStop(0, true);
 
+    // Animate text content on scroll
     gsap.to(textContentRef.current, {
       y: -scrollDistance,
       ease: "none",
@@ -41,6 +41,7 @@ const AnimationSection = () => {
       },
     });
 
+    // Control Lottie animation with scroll progress
     ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
