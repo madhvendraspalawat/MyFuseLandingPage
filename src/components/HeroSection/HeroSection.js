@@ -38,8 +38,9 @@ const HeroSection = () => {
             {/* Heading */}
             <div className={styles.mobileHeadingContainer}>
               <h1 className={styles.mobileHeading}>
-                Crack <br />
-                <span className={styles.myFuseBlue}>ATS</span> Code,
+                Create <span className={styles.myFuseBlue}>Resume</span>,
+                <br />
+                Crack <span className={styles.myFuseBlue}>ATS</span> Code,
                 <br />
                 Find <span className={styles.myFuseBlue}>Offers Faster</span>
               </h1>
@@ -85,6 +86,8 @@ const HeroSection = () => {
           </div>
           {/* Heading */}
           <h1 className={styles.desktopHeading}>
+            Create <span className={styles.myFuseBlue}>Resume</span>,
+            <br />
             Crack <span className={styles.myFuseBlue}>ATS</span> Code,
             <br />
             Find <span className={styles.myFuseBlue}>Offers Faster</span>
