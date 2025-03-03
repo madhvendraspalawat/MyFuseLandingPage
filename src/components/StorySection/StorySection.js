@@ -67,7 +67,7 @@ function StorySection() {
       : 0;
   const desktopOffset =
     effectiveWidth > 0
-      ? (effectiveWidth - desktopSlidePx) * 0.434 -
+      ? (effectiveWidth - desktopSlidePx) * 0.45 -
         currentIndex * (desktopSlidePx + desktopGap)
       : 0;
 
@@ -116,8 +116,9 @@ function StorySection() {
       {/* Heading */}
       <div className={styles.headingWrapper}>
         <div className={styles.headingText}>
-          For you, Make the <br />
-          <span className={styles.myFuseBlue}>Algorithm Work</span>
+          Dear Job Seeker,
+          <br />
+          <span className={styles.myFuseBlue}></span>
         </div>
 
         {/* Carousel Container */}
@@ -183,17 +184,45 @@ function StorySection() {
 
         {/* Dot Pagination (mobile only) */}
         {isMobile && (
-          <div className={styles.paginationDots}>
-            {visibleDots.map((_, i) => (
-              <div
-                key={i}
-                className={`${styles.dot} ${
-                  i === activeDotInWindow
-                    ? styles.activeDot
-                    : styles.inactiveDot
-                }`}
-              />
-            ))}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div className={styles.paginationDots}>
+              {visibleDots.map((_, i) => (
+                <div
+                  key={i}
+                  className={`${styles.dot} ${
+                    i === activeDotInWindow
+                      ? styles.activeDot
+                      : styles.inactiveDot
+                  }`}
+                />
+              ))}
+            </div>
+            <div
+              style={
+                !isMobile
+                  ? { display: "hidden" }
+                  : {
+                      fontFamily: "Figtree",
+                      fontSize: "24px",
+                      color: "black",
+                      textAlign: "center",
+                      paddingTop: "36px",
+                    }
+              }
+            >
+              This time, let’s make them notice
+              <br />
+              <span style={{ color: "var(--my-fuse-blue)" }}>
+                This time, let’s make it count.
+              </span>
+            </div>
           </div>
         )}
       </div>

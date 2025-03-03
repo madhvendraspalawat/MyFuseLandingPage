@@ -117,8 +117,8 @@ const HeroSection = () => {
       <div className={styles.sliderContainer}>
         <div className={styles.sliderInner}>
           <BeforeAfterSlider
-            beforeImage="/images/animations/Bad Resume.png"
-            afterImage="/images/animations/Good Resume.png"
+            beforeImage="/images/animations/Bad.svg"
+            afterImage="/images/animations/Good.svg"
           />
         </div>
       </div>

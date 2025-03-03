@@ -2,51 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 import styles from "./CommentSection.module.css";
-
-const comments = [
-  {
-    id: 1,
-    category: "recent graduate",
-    text: "As a recent graduate with very little experience, job hunting was really tough on me. MyFuse provided opportunities that matched my skills, making it easier to land my first job.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-  {
-    id: 4,
-    category: "recent graduate",
-    text: "As a recent graduate with very little experience, job hunting was really tough on me. MyFuse provided opportunities that matched my skills, making it easier to land my first job.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-  {
-    id: 5,
-    category: "recent graduate",
-    text: "As a recent graduate with very little experience, job hunting was really tough on me. MyFuse provided opportunities that matched my skills, making it easier to land my first job.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-  {
-    id: 2,
-    category: "young professional",
-    text: "As a young professional, I needed career guidance. MyFuse connected me with great opportunities that matched my skills, making my transition smooth.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-  {
-    id: 3,
-    category: "experienced professional",
-    text: "As an experienced professional, I was looking for better opportunities. MyFuse helped me find a position that aligns perfectly with my expertise.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-  {
-    id: 10,
-    category: "recent graduate",
-    text: "As an experienced professional, I was looking for better opportunities. MyFuse helped me find a position that aligns perfectly with my expertise.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-];
+import { comments } from "../../constants/testimonials";
 
 export default function CommentSection() {
   const [activeCategory, setActiveCategory] = useState("recent graduate");
