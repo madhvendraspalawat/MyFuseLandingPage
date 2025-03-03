@@ -1,0 +1,161 @@
+.outerContainer {
+  background-color: var(--myFuseBlue, #4d4dff); /* bg-my-fuseBlue */
+  width: 100%;
+  padding: 6rem; /* p-24 */
+  height: 35vw; /* h-[35vw] */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 639px) {
+  .outerContainer {
+    height: 50vw; /* max-sm:h-[50vw] */
+    /* On small screens, we'll use the default justify-content,
+       but in your original code, max-sm:justify-center was applied. */
+    justify-content: center;
+  }
+}
+
+.topRow {
+  display: flex;
+  width: 100%;
+  align-items: flex-start; /* items-start */
+  justify-content: space-between;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* gap-5 */
+}
+
+/* Brand text */
+.brand {
+  color: white; /* text-white */
+  font-weight: bold; /* font-bold */
+  font-family: "Space Grotesk", sans-serif; /* font-spaceGrotesk */
+  font-size: 4.5rem; /* text-7xl (approx.) */
+}
+
+/* Brand highlight */
+.brandHighlight {
+  color: var(--my-fuse-yellow, #fdc460); /* text-my-fuseYellow */
+}
+
+/* Subheading */
+.subheading {
+  color: var(--my-fuse-yellow, #fdc460); /* text-my-fuseYellow */
+  font-size: 1.5rem; /* text-2xl */
+  font-family: "Figtree", sans-serif; /* font-figtree */
+  font-weight: 500; /* font-medium */
+}
+
+/* Subscription container */
+.subscription {
+  margin-top: 1rem; /* mt-4 */
+  display: flex;
+  align-items: center;
+  background-color: white; /* bg-white */
+  border-radius: 9999px; /* rounded-full */
+  overflow: hidden;
+  padding-left: 0.25rem; /* px-1 */
+  padding-right: 0.25rem;
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem;
+  width: 83.3333%; /* w-5/6 */
+}
+
+/* Subscription input */
+.subscriptionInput {
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem;
+  font-family: "Figtree", sans-serif; /* font-figtree */
+  color: #1f2937; /* text-gray-800 */
+  flex: 1;
+  outline: none;
+  border: none;
+}
+
+/* Subscription button */
+.subscriptionButton {
+  background-color: var(--my-fuse-blue, #4d4dff); /* bg-my-fuseBlue */
+  color: white; /* text-white */
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem;
+  font-size: 1rem; /* text-base */
+  font-family: "Figtree", sans-serif; /* font-figtree */
+  font-weight: 600; /* font-semibold */
+  border-radius: 9999px; /* rounded-full */
+  margin-right: 0.5rem; /* mr-2 */
+  text-transform: uppercase;
+  border: none;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  justify-content: space-evenly;
+  height: 100%;
+  flex-grow: 1;
+  font-family: "Figtree", sans-serif; /* font-figtree */
+  color: white; /* text-white */
+  font-weight: 500; /* font-medium */
+}
+
+/* Right column: first nav item (heading) */
+.rightColumn span {
+  font-size: 1.25rem; /* text-xl */
+  color: var(--my-fuse-yellow, #fdc460); /* text-my-fuseYellow */
+}
+/* Right column: remaining nav links */
+.rightColumn a {
+  text-transform: capitalize;
+  font-size: 1.25rem; /* text-xl */
+  text-decoration: none;
+  color: white;
+}
+
+.bottomRow {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  color: white !important;
+  font-size: 1rem; /* text-base */
+  font-family: "Figtree", sans-serif;
+  gap: 0.75rem; /* space-x-3 */
+  text-decoration: none;
+}
+
+.legalLinks a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: white;
+}
+.legalLinks a:hover {
+  text-decoration: underline;
+}
+
+.legalPipe {
+  color: white;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1.25rem; /* gap-5 */
+  font-size: 1.5rem; /* text-2xl */
+  color: var(--my-fuse-yellow, #fdc460); /* text-myFuseYellow */
+  fill: var(--my-fuse-yellow, #fdc460);
+  stroke: var(--my-fuse-yellow, #fdc460);
+}

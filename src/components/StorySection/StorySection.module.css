@@ -1,0 +1,136 @@
+/* Outer container */
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 4rem 0; /* Equivalent to py-16 */
+}
+
+/* Heading wrapper */
+.headingWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem; /* gap-12 = 3rem */
+  margin-top: 175px;
+}
+@media (max-width: 640px) {
+  .headingWrapper {
+    margin-top: 2rem; /* max-sm:mt-8 */
+  }
+}
+
+/* Heading text */
+.headingText {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: bold;
+  font-size: 2.25rem; /* text-4xl */
+  width: 80%;
+  color: #0f0f0f;
+}
+@media (min-width: 768px) {
+  .headingText {
+    font-size: 4.5rem; /* md:text-7xl */
+    width: 50%;
+  }
+}
+
+/* Custom color */
+.myFuseBlue {
+  color: #4d4dff;
+}
+
+/* Carousel container */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 1rem; /* px-4 */
+}
+
+/* Carousel inner container */
+.carouselInner {
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+/* Each slide wrapper */
+.slideWrapper {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Slide image styling */
+.slideImage {
+  object-fit: cover;
+}
+
+/* Placeholder for missing image */
+.placeholder {
+  background-color: #9ca3af; /* Tailwind gray-400 */
+  width: 100%;
+  height: 100%;
+}
+
+/* Arrow buttons container (desktop only) */
+.arrowButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Arrow button */
+.arrowButton {
+  background-color: #4d4dff;
+  display: flex;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Rotate image 180 degrees */
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+/* Pagination dots container (mobile only) */
+.paginationDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Dot styles */
+.dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+}
+
+/* Active dot */
+.activeDot {
+  background-color: #4d4dff;
+}
+
+/* Inactive dot */
+.inactiveDot {
+  background-color: #d1d5db;
+}

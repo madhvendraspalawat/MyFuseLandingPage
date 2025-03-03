@@ -1,0 +1,249 @@
+/* Overall Section */
+.findJobsSection {
+  text-align: center;
+  padding-bottom: 120px; /* pb-[120px] */
+}
+
+/* Heading */
+.heading {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+  padding-bottom: 1.25rem; /* pb-5 */
+  color: #4d4dff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 4.5rem; /* lg:text-7xl */
+    padding-left: 6rem; /* lg:px-24 */
+    padding-right: 6rem;
+  }
+}
+
+/* Subheading paragraph */
+.subheading {
+  color: #6b7280; /* text-gray-500 */
+  font-size: 1.125rem; /* text-lg */
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+  font-family: "Figtree", sans-serif;
+}
+@media (min-width: 1024px) {
+  .subheading {
+    font-size: 1.5rem; /* lg:text-2xl */
+    padding-left: 6rem; /* lg:px-24 */
+    padding-right: 6rem;
+  }
+}
+
+/* Carousel Container */
+.carouselContainer {
+  position: relative;
+  margin-top: 2rem; /* mt-8 */
+  padding-left: 1.5rem; /* pl-6 */
+}
+@media (min-width: 1024px) {
+  .carouselContainer {
+    padding-left: 6rem; /* lg:pl-24 */
+  }
+}
+
+/* Inner Carousel Wrapper */
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Carousel Track */
+.carouselTrack {
+  display: flex;
+  gap: 1.75rem; /* gap-7 */
+}
+
+/* Job Card */
+.jobCard {
+  background-color: #f7fafc; /* bg-gray-100 */
+  border-radius: 1.5rem; /* approximates rounded-3xl */
+  padding: 1.5rem; /* p-6 */
+  min-width: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Card Top Row */
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.75rem; /* space-x-3 */
+}
+
+/* Logo Container */
+.logoContainer {
+  display: flex;
+}
+
+/* Job Title Section */
+.jobTitleSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Job Title */
+.jobTitle {
+  font-weight: 600; /* font-semibold */
+  font-size: 1.125rem; /* text-lg */
+  color: #000;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  text-align: left;
+}
+
+/* Job Category */
+.jobCategory {
+  color: #4d4dff;
+  font-size: 0.75rem; /* text-xs */
+  text-align: left;
+  font-family: "Figtree", sans-serif;
+}
+
+/* Job Details Row */
+.jobDetails {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.875rem; /* text-sm */
+  margin-top: 0.5rem; /* mt-2 */
+  font-family: "Figtree", sans-serif;
+  color: #4b5563; /* text-gray-600 */
+}
+
+/* Posted Info */
+.postedInfo {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  color: #4b5563;
+  font-family: "Figtree", sans-serif;
+  text-align: left;
+}
+
+/* Divider */
+.divider {
+  margin: 0.75rem 0; /* my-3 */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  width: 100%;
+}
+
+/* View Details Button */
+.viewDetailsButton {
+  width: 100%;
+  border-width: 2px;
+  background-color: #fff;
+  font-weight: 600;
+  font-family: "Figtree", sans-serif;
+  border-color: #4d4dff;
+  color: #4d4dff;
+  border-radius: 9999px; /* rounded-full */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; /* py-2 */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.viewDetailsButton:hover {
+  background-color: #4d4dff;
+  color: #fff;
+}
+
+/* Dot Indicators (Mobile Only) */
+.dotIndicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem; /* gap-2 */
+  margin-top: 1.5rem; /* mt-6 */
+}
+@media (min-width: 1024px) {
+  .dotIndicators {
+    display: none;
+  }
+}
+
+/* Dot */
+.dot {
+  height: 0.5rem; /* h-2 */
+  width: 0.5rem; /* w-2 */
+  border-radius: 9999px;
+}
+.activeDot {
+  background-color: #4d4dff;
+}
+.inactiveDot {
+  background-color: #d1d5db; /* bg-gray-300 */
+}
+
+/* Navigation Buttons Container (Desktop Only) */
+.navButtonsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem; /* mt-10 */
+  padding-left: 6rem;
+  padding-right: 6rem; /* px-24 */
+}
+@media (max-width: 639px) {
+  .navButtonsContainer {
+    display: none;
+  }
+}
+
+/* Empty Div (for layout spacing) */
+.emptyDiv {
+  width: 33.3333%;
+}
+
+/* Find More Button Container (Center) */
+.findMoreCenter {
+  width: 33.3333%;
+  display: flex;
+  justify-content: center;
+}
+.findMoreCenter button {
+  text-transform: uppercase;
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  font-size: 1rem; /* text-base */
+  background-color: var(--my-fuse-blue, #4d4dff);
+  border-radius: 9999px;
+  padding: 1rem 1.25rem; /* py-4, px-5 */
+  color: var(--myFuseWhite, #fff);
+  border: none;
+  cursor: pointer;
+}
+
+/* Navigation Buttons (Right Side) */
+.navButtons {
+  width: 33.3333%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem; /* gap-4 */
+}
+.navButton {
+  background-color: #4d4dff;
+  color: #fff;
+  padding: 0.75rem; /* p-3 */
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  width: 40px;
+  height: 40px;
+}
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

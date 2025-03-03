@@ -1,0 +1,179 @@
+/* Outer container equivalent to: flex flex-col items-center justify-center min-h-screen bg-myFuseYellow z-25 */
+.outerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--my-fuse-yellow);
+  z-index: 25;
+  width: 100%;
+  padding: 96px 0px;
+}
+
+/* Heading styles: text-7xl, font-bold, text-center, px-24, pt-16, pb-20, font-plusJakarta, text-black, leading-tight */
+.heading {
+  font-size: 4.5rem; /* Adjust as needed for text-7xl */
+  font-weight: bold;
+  text-align: center;
+  padding: 4rem 6rem 5rem; /* pt-16 (4rem), px-24 (6rem), pb-20 (5rem) */
+  color: black;
+  line-height: 1.1;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  width: 100%;
+  font-size: 72px;
+}
+.headingHighlight {
+  color: #4d4dff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+@media (max-width: 768px) {
+  .heading {
+    font-size: 32px;
+  }
+  .headingHighlight {
+    font-size: 32px;
+  }
+}
+
+/* Carousel container: relative, full width, max-w-7xl, h-[500px], flex, centered, z-100 */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  max-width: 80rem; /* max-w-7xl (80rem) */
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+/* Each slide wrapper: absolute, flex-col */
+.slideWrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slide image wrapper: relative, overflow-hidden, rounded-xl, shadow-2xl */
+.slideImageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem; /* rounded-xl approx */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-2xl approximation */
+}
+
+/* Pagination container for small screens */
+.paginationContainer {
+  position: relative;
+  margin-top: 1rem; /* mt-4 */
+}
+.paginationDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+  padding: 2.5rem 0; /* py-10 */
+}
+
+/* Dot button styles: relative, w-3, h-3, rounded-full, bg-myFuseBlue */
+.dotButton {
+  position: relative;
+  width: 0.75rem; /* w-3 */
+  height: 0.75rem; /* h-3 */
+  border-radius: 9999px;
+  background-color: var(--my-fuse-blue);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Active dot inside the button */
+.activeDot {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: #4d4dff;
+}
+
+/* "USE TEMPLATE" button (small screens) wrapper */
+.smallScreenButtonWrapper {
+  width: 100%;
+  max-width: 28rem; /* max-w-md */
+  padding: 1.25rem;
+  padding-bottom: 4rem; /* pb-16 */
+}
+.useTemplateButtonSmall {
+  width: 100%;
+  background-color: #4d4dff;
+  color: white;
+  font-family: "Figtree", sans-serif;
+  border-radius: 9999px;
+  padding: 1.25rem 0; /* py-5 */
+  font-size: 1rem; /* text-md */
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.useTemplateButtonSmall:hover {
+  background-color: #3b3bff;
+}
+
+/* Controls Row for larger screens */
+.controlsRow {
+  width: 100%;
+  max-width: 80rem; /* max-w-7xl */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem; /* mt-6 */
+  padding: 3rem 1.5rem 5rem; /* pt-12, px-6, pb-20 */
+}
+.leftPlaceholder {
+  width: 33.3333%;
+}
+.centerButtonWrapper {
+  width: 33.3333%;
+  display: flex;
+  justify-content: center;
+}
+.useTemplateButtonLarge {
+  background-color: #4d4dff;
+  color: white;
+  font-family: "Figtree", sans-serif;
+  border-radius: 9999px;
+  padding: 1.25rem 1.5rem; /* px-6, py-5 */
+  width: 50%;
+  font-size: 1rem; /* text-md */
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.useTemplateButtonLarge:hover {
+  background-color: #3b3bff;
+}
+.paginationButtons {
+  width: 33.3333%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem; /* gap-4 */
+}
+.controlButton {
+  background-color: #4d4dff;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.75rem; /* p-3 */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.controlButton:hover {
+  background-color: #3b3bff;
+}
+.controlIcon {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+}

@@ -1,0 +1,150 @@
+/* Outer Container
+   - Default (large screens): background #F7F8FA, padding 6rem horizontally & 120px vertically.
+   - On small screens (max-width: 640px): background becomes “myFuseYellow” (using a CSS variable with fallback), padding 1.5rem horizontally and 4rem vertically.
+*/
+.getStartedContainer {
+  width: 100%;
+  height: 100%;
+  padding: 120px 6rem;
+  background-color: #f7f8fa;
+}
+@media (max-width: 640px) {
+  .getStartedContainer {
+    padding: 4rem 1.5rem;
+    background-color: var(--myFuseYellow, #fdc460);
+  }
+}
+
+/* Inner Container:
+   - Has a 1px border with color “myFuseYellow” (via variable fallback), background #F7F8FA,
+   - Rounded corners of 40px,
+   - Displays its children in a row (flex), spaced between, centered vertically.
+   - On small screens, vertical padding becomes 1.5rem.
+*/
+.innerContainer {
+  position: relative;
+  border: 1px solid var(--myFuseYellow, #fdc460);
+  background-color: #f7f8fa;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 640px) {
+  .innerContainer {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Left Content:
+   - Absolutely positioned to overlay the inner container,
+   - Full width, flex column, wrapping if needed, centered vertically,
+   - Gap of 2.5rem between items,
+   - Padding left/right of 72px by default; on small screens, all padding becomes 1rem.
+*/
+.leftContent {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding-left: 72px;
+  padding-right: 72px;
+}
+@media (max-width: 640px) {
+  .leftContent {
+    padding: 1rem;
+  }
+}
+
+/* Utility classes for height based on device */
+.hFull {
+  height: 100%;
+}
+.hAuto {
+  height: auto;
+}
+
+/* Heading container inside left content */
+.headingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* gap-5 */
+  width: 100%;
+}
+
+/* Main heading */
+.getStartedHeading {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: bold;
+  font-size: 72px; /* text-5xl */
+  color: var(--myFuseBlue, #4d4dff);
+  width: 70%;
+}
+@media (max-width: 640px) {
+  .getStartedHeading {
+    font-size: 2.25rem; /* text-4xl */
+    width: 75%;
+  }
+}
+
+/* Subheading paragraph */
+.getStartedSubheading {
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 24px; /* text-2xl */
+  color: #8e8fa9;
+}
+@media (max-width: 640px) {
+  .getStartedSubheading {
+    font-size: 1rem; /* text-base */
+    width: 66.67%;
+  }
+}
+
+/* Get Started button */
+.getStartedButton {
+  background-color: var(--myFuseBlue, #4d4dff);
+  border-radius: 9999px;
+  z-index: 10;
+  padding: 1rem 1.25rem; /* py-4 px-5 */
+  text-transform: uppercase;
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+  width: fit-content;
+}
+@media (max-width: 640px) {
+  .getStartedButton {
+    width: 100%;
+  }
+}
+
+/* Right Content Container */
+.rightContent {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Image styles */
+.getStartedImage {
+  display: flex;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+@media (max-width: 640px) {
+  .getStartedImage {
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,79 @@
+/* Outer container */
+.container {
+  background-color: white;
+  padding: 95px 24px; /* py-12 (3rem) and px-6 (1.5rem) */
+}
+
+/* For small screens override padding */
+@media (max-width: 640px) {
+  .container {
+    padding-top: 32px; /* py-16 (4rem) */
+    padding-bottom: 160px;
+  }
+}
+
+/* Heading styling */
+.heading {
+  text-align: center;
+  font-size: 1.125rem; /* text-lg */
+  font-family: "Figtree", sans-serif;
+  font-weight: 500; /* font-medium */
+  color: #4d4dff;
+  padding-bottom: 32px; /* pt-10 (2.5rem) */
+}
+@media (max-width: 640px) {
+  .heading {
+    padding-bottom: 20px;
+  }
+}
+
+/* Desktop Logos container */
+.desktopLogos {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopLogos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem; /* gap-12 (3rem) */
+    margin-top: 1.5rem; /* mt-6 (1.5rem) */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Desktop logo image style */
+.logoDesktop {
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+  display: flex;
+}
+.logoDesktop:hover {
+  filter: grayscale(0%);
+}
+
+/* Mobile Logos container */
+.mobileLogos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem; /* gap-6 (1.5rem) */
+  justify-items: center;
+  margin-top: 1.5rem; /* mt-6 (1.5rem) */
+}
+
+@media (min-width: 768px) {
+  .mobileLogos {
+    display: none;
+  }
+}
+
+/* Mobile logo image style */
+.logoMobile {
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+.logoMobile:hover {
+  filter: grayscale(0%);
+}

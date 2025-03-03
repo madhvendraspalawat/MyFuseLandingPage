@@ -1,0 +1,232 @@
+/* Root Container */
+.container {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: #f7f8fa;
+}
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+/* Heading Styles */
+.heading {
+  text-align: center;
+  color: #4d4dff; /* myFuseBlue */
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: bold;
+  font-size: 2.25rem; /* text-4xl */
+}
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 4.5rem; /* lg:text-7xl */
+  }
+}
+
+/* Subheading Styles */
+.subheading {
+  text-align: center;
+  color: #8e8fa9;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem; /* text-lg */
+  padding-top: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .subheading {
+    font-size: 1.5rem; /* lg:text-2xl */
+  }
+}
+
+/* Desktop Cards Container */
+.desktopCards {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .desktopCards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2.25rem; /* gap-9 */
+    height: 400px;
+    margin-top: 2.5rem; /* mt-10 */
+  }
+}
+
+/* Individual Desktop Card */
+.desktopCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #4d4dff; /* myFuseBlue */
+  border-radius: 20px;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+/* Front Content (Desktop Card) */
+.frontContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+/* Front Content – ID Number */
+.frontId {
+  font-size: 1.25rem; /* text-xl */
+  color: #fdc460; /* myFuseYellow */
+  font-weight: 800; /* extrabold */
+  font-family: "Figtree", sans-serif;
+}
+
+/* Front Content – Title */
+.frontTitle {
+  font-weight: 600;
+  font-size: 1.875rem; /* text-3xl */
+  font-family: "Figtree", sans-serif;
+  color: #fff;
+}
+
+/* Back Content (Desktop Card) */
+.backContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdc460; /* myFuseYellow */
+  border-radius: 20px;
+  padding: 1.5rem;
+  z-index: 20;
+}
+
+/* Back Content – Text */
+.backText {
+  color: #4d4dff; /* myFuseBlue */
+  text-align: center;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Back Content – Button */
+.backButton {
+  background-color: #4d4dff;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.backButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Mobile Cards Container */
+.mobileCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .mobileCards {
+    display: none;
+  }
+}
+
+/* Individual Mobile Card */
+.mobileCard {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Mobile Card – Top Section */
+.mobileCardTop {
+  background-color: #4d4dff; /* myFuseBlue */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Mobile Card – Icon */
+.mobileIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Mobile Card – Title */
+.mobileTitle {
+  color: #fff;
+  font-size: 1.25rem;
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+}
+
+/* Mobile Card – Bottom Section */
+.mobileCardBottom {
+  background-color: #fdc460; /* myFuseYellow */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 1.5rem;
+}
+
+/* Mobile Card – Text */
+.mobileText {
+  color: #4d4dff; /* myFuseBlue */
+  text-align: center;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Start Now Button */
+.startButton {
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #4d4dff; /* myFuseBlue */
+  border-radius: 9999px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #fff;
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1024px) {
+  .startButton {
+    width: fit-content;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}

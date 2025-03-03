@@ -1,0 +1,278 @@
+/* Root Section */
+.commentSection {
+  color: #000; /* text-black */
+  background-color: var(
+    --my-fuse-yellow,
+    #f7f8fa
+  ); /* bg-myFuseYellow (fallback color) */
+  width: 100%;
+  padding-top: 64px;
+  margin-bottom: 64px;
+}
+
+/* Background Container */
+.backgroundContainer {
+  width: 100%;
+  text-align: center;
+  background-image: url("../../../public/images/backgrounds/testimonialSection.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Heading & Image Container */
+.headingContainer {
+  display: flex;
+  align-items: center;
+  padding-top: 5rem; /* pt-20 */
+  gap: 1rem; /* gap-4 */
+  margin-left: 1rem;
+  margin-right: 1rem; /* mx-4 */
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .headingContainer {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 15rem; /* md:pt-60 */
+    gap: 1.5rem; /* md:gap-6 */
+    margin-left: 6rem;
+    margin-right: 6rem; /* md:mx-24 */
+  }
+}
+
+/* Heading Image */
+.headingImage {
+  width: 5rem; /* w-20 */
+}
+@media (min-width: 768px) {
+  .headingImage {
+    width: auto; /* md:w-auto */
+  }
+}
+
+/* Heading */
+.heading {
+  font-size: 1.5rem; /* text-2xl */
+  font-family: "Plus Jakarta Sans", sans-serif; /* font-plusJakarta */
+  font-weight: bold;
+  color: #4d4dff; /* text-[#4D4DFF] */
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 4.5rem; /* lg:text-7xl */
+  }
+}
+@media (min-width: 768px) {
+  .heading {
+    text-align: left; /* md:text-left */
+  }
+}
+
+/* Divider */
+.divider {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .divider {
+    display: block;
+    width: 900px; /* lg:w-[900px] */
+    border-top: 2px solid #9ca3af; /* border-t-2 border-gray-400 */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Category Buttons Container */
+.categoryButtons {
+  display: flex;
+  font-size: 0.75rem; /* text-xs */
+  padding: 1rem 0; /* py-4 */
+  justify-content: center;
+  gap: 0.5rem; /* gap-2 */
+  margin-bottom: 1rem; /* mb-4 */
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem; /* px-4 */
+  flex-wrap: nowrap;
+}
+@media (min-width: 768px) {
+  .categoryButtons {
+    gap: 0.75rem; /* md:gap-3 */
+    margin-bottom: 2rem; /* md:mb-8 */
+  }
+}
+@media (min-width: 1024px) {
+  .categoryButtons {
+    font-size: 1.125rem; /* lg:text-lg */
+    padding: 3.5rem 0; /* lg:py-14 */
+  }
+}
+
+/* Category Button Base */
+.categoryButton {
+  font-size: 10px; /* text-[10px] */
+  padding: 0.25rem 0.75rem; /* py-1, px-3 */
+  border-radius: 9999px; /* rounded-full */
+  transition: all 0.3s;
+  font-family: "Figtree";
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .categoryButton {
+    font-size: 14px; /* md:text-sm */
+  }
+}
+@media (min-width: 1024px) {
+  .categoryButton {
+    font-size: 20px; /* lg:text-lg */
+    padding: 0.5rem 1.5rem; /* lg:py-2, lg:px-6 */
+  }
+}
+
+/* Active Category Button */
+.activeCategoryButton {
+  background-color: #6366f1; /* bg-indigo-500 */
+  color: #fff;
+}
+
+/* Inactive Category Button */
+.inactiveCategoryButton {
+  background-color: #fff;
+  color: #4d4dff; /* text-myFuseBlue */
+  border: 1px solid #4d4dff;
+}
+.inactiveCategoryButton:hover {
+  background-color: rgba(77, 77, 255, 0.8); /* hover:bg-[#4d4dff]/80 */
+  color: #fff;
+}
+
+/* Comments Container */
+.commentsContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  justify-content: flex-start;
+  gap: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.commentsContainer::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .commentsContainer {
+    flex-direction: row;
+    padding-left: 6rem; /* md:px-24 */
+    padding-right: 6rem;
+    padding-bottom: 15rem; /* md:pb-60 */
+  }
+}
+
+/* Comment Card */
+.commentCard {
+  padding: 1rem; /* p-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+@media (min-width: 768px) {
+  .commentCard {
+    padding: 1.5rem; /* md:p-6 */
+    max-width: 24rem; /* md:max-w-sm */
+  }
+}
+
+/* Quotation Image */
+.quotationImage {
+  width: 1.5rem; /* w-6 */
+}
+@media (min-width: 768px) {
+  .quotationImage {
+    width: auto; /* md:w-auto */
+  }
+}
+
+/* Comment Text */
+.commentText {
+  color: #6f6c90; /* text-myFuseSlate */
+  padding-top: 1.25rem; /* pt-5 */
+  padding-bottom: 1.75rem; /* pb-7 */
+  font-size: 1.125rem; /* text-lg */
+  font-family: "Figtree", sans-serif; /* font-figtree */
+}
+@media (min-width: 768px) {
+  .commentText {
+    font-size: 1.5rem; /* md:text-2xl */
+  }
+}
+
+/* Card Footer */
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space-x-2 */
+  margin-top: auto;
+}
+@media (min-width: 768px) {
+  .cardFooter {
+    gap: 0.75rem; /* md:space-x-3 */
+  }
+}
+
+/* Profile Image */
+.profileImage {
+  width: 2rem; /* w-8 */
+  height: 2rem; /* h-8 */
+  border-radius: 9999px;
+}
+@media (min-width: 768px) {
+  .profileImage {
+    width: 2.5rem; /* md:w-10 */
+    height: 2.5rem; /* md:h-10 */
+  }
+}
+
+/* Comment Name */
+.commentName {
+  color: #6f6c90; /* text-myFuseSlate */
+  font-family: "Plus Jakarta Sans", sans-serif; /* font-plusJakarta */
+  font-weight: 600; /* font-semibold */
+  font-size: 0.875rem; /* text-sm */
+}
+@media (min-width: 768px) {
+  .commentName {
+    font-size: 1rem; /* md:text-base */
+  }
+}
+
+/* Pagination Dots Container */
+.paginationDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem; /* gap-2 */
+  margin-top: 1rem; /* mt-4 */
+}
+
+/* Dot */
+.dot {
+  width: 0.75rem; /* w-3 */
+  height: 0.75rem; /* h-3 */
+  border-radius: 9999px;
+  transition: background-color 300ms;
+}
+.activeDot {
+  background-color: #4d4dff; /* bg-myFuseBlue */
+}
+.inactiveDot {
+  background-color: #d1d5db; /* bg-gray-300 */
+}
