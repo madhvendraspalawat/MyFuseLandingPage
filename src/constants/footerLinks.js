@@ -8,11 +8,8 @@ import {
 
 export const footerLinks = {
   navLinks: [
-    { id: 1, name: "Company", redirectURL: "#" },
-    { id: 2, name: "home", redirectURL: "#" },
-    { id: 3, name: "blog", redirectURL: "#" },
-    { id: 4, name: "about us", redirectURL: "#" },
-    { id: 5, name: "contact us", redirectURL: "#" },
+    { id: 2, name: "Terms & conditions", redirectURL: "#" },
+    { id: 3, name: "privacy policy", redirectURL: "#" },
   ],
   legalLinks: [
     { id: 1, name: "All rights reserved © 2024", redirectURL: "#" },

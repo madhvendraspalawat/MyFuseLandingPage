@@ -101,7 +101,8 @@
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
-  justify-content: space-evenly;
+  justify-content: start;
+  gap: 1.25rem;
   height: 100%;
   flex-grow: 1;
   font-family: "Figtree", sans-serif; /* font-figtree */
