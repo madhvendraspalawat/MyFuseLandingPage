@@ -5,33 +5,9 @@ import Lottie from "lottie-react";
 import animationData from "../../assets/animations/MyFuse Animation Sparky.json";
 import styles from "./AnimationSection.module.css";
 import { buttonData } from "../../constants/buttons";
-const sections = [
-  {
-    title: "Check Resume Score",
-    subtitle: "Resume Score",
-    text: "Turn your experience into an interview-winning resume with MyFuse’s AI builder. Create ATS-optimized formats in minutes, get action word suggestions and tailor content to industry standards effortlessly.",
-    buttonText: "Check now",
-  },
-  {
-    title: "Create New Resume using AI",
-    subtitle: "Create Resume",
-    text: "Turn your experience into an interview-winning resume with MyFuse's AI builder. Create ATS-optimized formats in minutes, get action word suggestions, and tailor content to industry standards effortlessly.",
-    buttonText: "Create Now",
-  },
-  {
-    title: "Custom Resume for Every JD",
-    subtitle: "Resume Customization",
-    text: "Turn your experience into an interview-winning resume with MyFuse's AI builder. Create ATS-optimized formats in minutes, get action word suggestions and tailor content to industry standards effortlessly.",
-    buttonText: "Customize Now",
-  },
-  {
-    title: "Smart Job Matching",
-    subtitle: "Match Jobs",
-    text: "Turn your experience into an interview-winning resume with MyFuse's AI builder. Create ATS-optimized formats in minutes, get action word suggestions and tailor content to industry standards effortlessly.",
-    buttonText: "Find Jobs",
-  },
-];
-
+import { sections } from "../../constants/animationText";
+import MyFuseButton from "../MyFuseButton/MyFuseButton";
+import { button } from "framer-motion/client";
 const AnimationSection = () => {
   const containerRef = useRef(null);
   const textContentRef = useRef(null);
@@ -109,12 +85,12 @@ const AnimationSection = () => {
                     <h2 className={styles.title}>{item.title}</h2>
                     <p className={styles.description}>{item.text}</p>
                   </div>
-                  <button
+                  <MyFuseButton
                     className={styles.sectionButton}
                     onClick={buttonData.animationSection[index].onClick}
-                  >
-                    {buttonData.animationSection[index].title}
-                  </button>
+                    variant={buttonData.animationSection[index].variant}
+                    title={item.buttonText}
+                  />
                 </div>
               ))}
             </div>

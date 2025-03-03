@@ -5,33 +5,7 @@ import Lottie from "lottie-react";
 import animationData from "../../assets/animations/MyFuse Animation Sparky.json";
 import styles from "./VerticalAnimationSection.module.css";
 import { buttonData } from "../../constants/buttons";
-const sections = [
-  {
-    title: "Check Resume Score",
-    subtitle: "Resume Score",
-    text: "Turn your experience into an interview-winning resume with MyFuse’s AI builder. Create ATS-optimized formats in minutes, get action word suggestions and tailor content to industry standards effortlessly.",
-    buttonText: "Check now",
-  },
-  {
-    title: "Create New Resume using AI",
-    subtitle: "Create Resume",
-    text: "Turn your experience into an interview-winning resume with MyFuse's AI builder. Create ATS-optimized formats in minutes, get action word suggestions, and tailor content to industry standards effortlessly.",
-    buttonText: "Create Now",
-  },
-  {
-    title: "Custom Resume for Every JD",
-    subtitle: "Resume Customization",
-    text: "Turn your experience into an interview-winning resume with MyFuse's AI builder. Create ATS-optimized formats in minutes, get action word suggestions and tailor content to industry standards effortlessly.",
-    buttonText: "Customize Now",
-  },
-  {
-    title: "Smart Job Matching",
-    subtitle: "Match Jobs",
-    text: "Turn your experience into an interview-winning resume with MyFuse's AI builder. Create ATS-optimized formats in minutes, get action word suggestions and tailor content to industry standards effortlessly.",
-    buttonText: "Find Jobs",
-  },
-];
-
+import { sections } from "../../constants/animationText";
 function VerticalAnimationSection() {
   const containerRef = useRef(null);
   const pinnedRef = useRef(null);
