@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaQuoteLeft } from "react-icons/fa";
 import styles from "./CommentSection.module.css";
 import { comments } from "../../constants/testimonials";
@@ -55,27 +56,81 @@ export default function CommentSection() {
   return (
     <section className={styles.commentSection}>
       <div className={styles.backgroundContainer}>
-        {/* Heading & Image */}
-        <div className={styles.headingContainer}>
-          <img
-            src="/images/animations/testimonialSectionClip.svg"
-            alt="Pin"
-            className={styles.headingImage}
-          />
-          <h2 className={styles.heading}>
-            Job Seekers Love <br className="hidden md:block" /> MyFuse
-          </h2>
+        <div
+          style={
+            isMobile
+              ? {
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }
+              : {}
+          }
+        >
+          {" "}
+          {/* Heading & Image */}
+          <div
+            className={styles.headingContainer}
+            style={
+              isMobile
+                ? {
+                    display: "flex",
+                    flexDirection: "row-reverse",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderBottom: "1px solid #4d4dff",
+                    paddingLeft: "16px",
+                    paddingRight: "16px",
+                  }
+                : {}
+            }
+          >
+            <img
+              src="/images/animations/testimonialSectionClip.svg"
+              alt="Pin"
+              className={styles.headingImage}
+              style={isMobile ? { transform: "translateY(10px)" } : {}}
+            />
+            <div
+              style={{
+                textAlign: "left",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <h2 className={styles.heading} style={{ textAlign: "left" }}>
+                Job Seekers Love <br className="hidden md:block" /> MyFuse
+              </h2>
+            </div>
+          </div>
         </div>
-        <hr className={styles.divider} />
 
         {/* Category Buttons */}
-        <div className={styles.categoryButtons}>
+        <div
+          className={
+            !isMobile ? styles.categoryButton : styles.mobileCategoryButton
+          }
+          style={
+            isMobile
+              ? {
+                  paddingTop: "16px",
+                  width: "100%",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                }
+              : {}
+          }
+        >
           {[
             "recent graduate",
             "young professional",
             "experienced professional",
           ].map((category) => (
-            <button
+            // Use motion.button on mobile to enable shared layout animation.
+            <motion.button
               key={category}
               onClick={() => {
                 setActiveCategory(category);
@@ -84,15 +139,33 @@ export default function CommentSection() {
                   scrollContainerRef.current.scrollLeft = 0;
                 }
               }}
-              className={`${styles.categoryButton} ${
-                activeCategory === category
-                  ? styles.activeCategoryButton
-                  : styles.inactiveCategoryButton
-              }`}
-              style={{ border: "2px solid #4d4dff" }}
+              className={
+                !isMobile ? styles.categoryButton : styles.mobileCategoryButton
+              }
+              style={
+                isMobile
+                  ? {}
+                  : {
+                      border: "2px solid #4d4dff",
+                      paddingLeft: "12px",
+                      paddingRight: "12px",
+                    }
+              }
+              animate={{
+                // Change text color when selected.
+                color:
+                  activeCategory === category
+                    ? "var(--my-fuse-blue, #fdc460)"
+                    : "#000000",
+                backgroundColor:
+                  activeCategory === category ? "#fff" : "transparent",
+              }}
             >
               {category.toUpperCase().replace("_", " ")}
-            </button>
+              {activeCategory === category && (
+                <motion.div className={styles.underline} layoutId="underline" />
+              )}
+            </motion.button>
           ))}
         </div>
 
