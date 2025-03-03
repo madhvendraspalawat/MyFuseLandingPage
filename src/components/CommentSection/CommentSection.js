@@ -1,52 +1,9 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaQuoteLeft } from "react-icons/fa";
 import styles from "./CommentSection.module.css";
-
-const comments = [
-  {
-    id: 1,
-    category: "recent graduate",
-    text: "As a recent graduate with very little experience, job hunting was really tough on me. MyFuse provided opportunities that matched my skills, making it easier to land my first job.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-  {
-    id: 4,
-    category: "recent graduate",
-    text: "As a recent graduate with very little experience, job hunting was really tough on me. MyFuse provided opportunities that matched my skills, making it easier to land my first job.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-  {
-    id: 5,
-    category: "recent graduate",
-    text: "As a recent graduate with very little experience, job hunting was really tough on me. MyFuse provided opportunities that matched my skills, making it easier to land my first job.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-  {
-    id: 2,
-    category: "young professional",
-    text: "As a young professional, I needed career guidance. MyFuse connected me with great opportunities that matched my skills, making my transition smooth.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-  {
-    id: 3,
-    category: "experienced professional",
-    text: "As an experienced professional, I was looking for better opportunities. MyFuse helped me find a position that aligns perfectly with my expertise.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-  {
-    id: 10,
-    category: "recent graduate",
-    text: "As an experienced professional, I was looking for better opportunities. MyFuse helped me find a position that aligns perfectly with my expertise.",
-    name: "Rajesh Singh",
-    profile: "/images/profile/rajeshpfp.jpg",
-  },
-];
+import { comments } from "../../constants/testimonials";
 
 export default function CommentSection() {
   const [activeCategory, setActiveCategory] = useState("recent graduate");
@@ -100,44 +57,136 @@ export default function CommentSection() {
     <section className={styles.commentSection}>
       <div className={styles.backgroundContainer}>
         {/* Heading & Image */}
-        <div className={styles.headingContainer}>
-          <img
-            src="/images/animations/testimonialSectionClip.svg"
-            alt="Pin"
-            className={styles.headingImage}
-          />
-          <h2 className={styles.heading}>
-            Job Seekers Love <br className="hidden md:block" /> MyFuse
-          </h2>
+        <div
+          style={
+            isMobile
+              ? {
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }
+              : {}
+          }
+        >
+          <div
+            className={styles.headingContainer}
+            style={
+              isMobile
+                ? {
+                    display: "flex",
+                    flexDirection: "row-reverse",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderBottom: "1px solid #4d4dff",
+                    paddingLeft: "16px",
+                    paddingRight: "16px",
+                  }
+                : {}
+            }
+          >
+            <img
+              src="/images/animations/testimonialSectionClip.svg"
+              alt="Pin"
+              className={styles.headingImage}
+              style={isMobile ? { transform: "scaleX(-1)" } : {}}
+            />
+            <div
+              style={{
+                textAlign: "left",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <h2 className={styles.heading} style={{ textAlign: "left" }}>
+                Job Seekers Love <br className="hidden md:block" /> MyFuse
+              </h2>
+            </div>
+          </div>
         </div>
-        <hr className={styles.divider} />
 
         {/* Category Buttons */}
-        <div className={styles.categoryButtons}>
+        <div
+          className={styles.categoryButtons}
+          style={
+            isMobile
+              ? {
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "16px",
+                }
+              : {}
+          }
+        >
           {[
             "recent graduate",
             "young professional",
             "experienced professional",
-          ].map((category) => (
-            <button
-              key={category}
-              onClick={() => {
-                setActiveCategory(category);
-                setCurrentIndex(0);
-                if (scrollContainerRef.current) {
-                  scrollContainerRef.current.scrollLeft = 0;
-                }
-              }}
-              className={`${styles.categoryButton} ${
-                activeCategory === category
-                  ? styles.activeCategoryButton
-                  : styles.inactiveCategoryButton
-              }`}
-              style={{ border: "2px solid #4d4dff" }}
-            >
-              {category.toUpperCase().replace("_", " ")}
-            </button>
-          ))}
+          ].map((category) =>
+            isMobile ? (
+              // Mobile: use motion.button with mobile-specific styles and shared layout underline.
+              <motion.button
+                key={category}
+                onClick={() => {
+                  setActiveCategory(category);
+                  setCurrentIndex(0);
+                  if (scrollContainerRef.current) {
+                    scrollContainerRef.current.scrollLeft = 0;
+                  }
+                }}
+                className={styles.mobileCategoryButton}
+                animate={{
+                  color:
+                    activeCategory === category
+                      ? "var(--my-fuse-blue, #4d4dff)"
+                      : "#000000",
+                  backgroundColor:
+                    activeCategory === category ? "#fff" : "transparent",
+                }}
+              >
+                {category.toUpperCase().replace("_", " ")}
+                {activeCategory === category && (
+                  <motion.div
+                    className={styles.underline}
+                    layoutId="underline"
+                    animate={{
+                      opacity: activeCategory === category ? 1 : 0,
+                      scaleX: activeCategory === category ? 1 : 0.8,
+                    }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </motion.button>
+            ) : (
+              // Desktop: use standard buttons.
+              <button
+                key={category}
+                onClick={() => {
+                  setActiveCategory(category);
+                  setCurrentIndex(0);
+                  if (scrollContainerRef.current) {
+                    scrollContainerRef.current.scrollLeft = 0;
+                  }
+                }}
+                className={`${styles.categoryButton} ${
+                  activeCategory === category
+                    ? styles.activeCategoryButton
+                    : styles.inactiveCategoryButton
+                }`}
+                style={{
+                  border: "2px solid #4d4dff",
+                  paddingLeft: "12px",
+                  paddingRight: "12px",
+                }}
+              >
+                {category.toUpperCase().replace("_", " ")}
+              </button>
+            )
+          )}
         </div>
 
         {/* Comments Container */}
@@ -149,6 +198,7 @@ export default function CommentSection() {
             touchAction: "pan-x",
             msOverflowStyle: "none",
             scrollbarWidth: "none",
+            WebkitOverflowScrolling: "touch",
           }}
         >
           {filteredComments.map((comment) => (

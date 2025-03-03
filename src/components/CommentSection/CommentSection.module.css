@@ -282,3 +282,28 @@
 .inactiveDot {
   background-color: #d1d5db; /* bg-gray-300 */
 }
+.mobileCategoryButton {
+  padding: 1rem 1rem;
+  border-radius: 9999px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  color: #000;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: "100%";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+.underline {
+  display: block;
+  height: 2px;
+  width: 100%; /* full width of the button */
+  background: var(--my-fuse-blue, #fdc460);
+  border-radius: 1px;
+  margin-top: 4px;
+}

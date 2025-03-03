@@ -64,11 +64,17 @@ const jobs = [
 export default function FindJobs() {
   const slideWidth = 324;
   const maxIndex = jobs.length - 1;
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const controls = useAnimation();
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Animate to the current index
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const animateToIndex = (newIndex) => {
     controls.start({
       x: `-${newIndex * slideWidth}px`,
@@ -76,7 +82,6 @@ export default function FindJobs() {
     });
   };
 
-  // Handle Swipe for Mobile
   const handleSwipe = (direction) => {
     if (direction === "left" && currentIndex < maxIndex) {
       setCurrentIndex(currentIndex + 1);
@@ -89,7 +94,6 @@ export default function FindJobs() {
     animateToIndex(currentIndex);
   }, [currentIndex]);
 
-  // Handle Previous and Next Buttons (Desktop Only)
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
@@ -115,13 +119,13 @@ export default function FindJobs() {
         <div className={styles.carouselWrapper}>
           <motion.div
             className={styles.carouselTrack}
-            // Add touch-action style so vertical scrolls work:
-            style={{ touchAction: "pan-y" }}
+            // Allow vertical touch gestures
+            style={{ touchAction: "auto" }}
             animate={controls}
-            drag="x"
+            // Enable horizontal drag only on mobile
+            drag={isMobile ? "x" : false}
             dragConstraints={{ left: -slideWidth * maxIndex, right: 0 }}
             dragDirectionLock={true}
-            dragPropagation={true}
             dragElastic={0.2}
             dragMomentum={false}
             onDragEnd={(event, info) => {
